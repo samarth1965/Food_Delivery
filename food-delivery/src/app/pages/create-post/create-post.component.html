@@ -1,0 +1,59 @@
+<!-- <div class="container">
+  <h1>Create Post</h1>
+  <form [formGroup]="postForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="title" class="form-label">Food Name <span class="text-danger">*</span></label>
+      <input type="text" class="form-control" id="title" formControlName="foodName" placeholder="Enter title">
+      <div *ngIf="postForm.get('foodName')?.invalid && (postForm.get('foodName')?.dirty || postForm.get('foodName')?.touched)" class="text-danger">
+        <div *ngIf="postForm.get('foodName')?.errors?.['required']">Food Name is required.</div>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="content" class="form-label">Food Category <span class="text-danger">*</span></label>
+      <textarea class="form-control" id="content" formControlName="foodCategory" placeholder="Enter content"></textarea>
+      <div *ngIf="postForm.get('foodCategory')?.invalid && (postForm.get('foodCategory')?.dirty || postForm.get('foodCategory')?.touched)" class="text-danger">
+        <div *ngIf="postForm.get('foodCategory')?.errors?.['required']">Category is required.</div>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="image" class="form-label">Upload Image</label>
+      <input type="file" class="form-control" id="image" multiple value="select" (change)="onFileSelected($event)" accept="image/*">
+      <div *ngFor="let fileHandle of postForm.get('imageModelSet')?.value">
+        <img [src]="fileHandle.url" class="img-thumbnail" style="max-width: 100px; max-height: 100px; margin-top: 5px;">
+      </div>
+    </div><button type="submit" class="btn btn-primary" [disabled]="postForm.invalid">Submit</button>
+  </form>
+</div> -->
+<div class="container">
+  <h1>Create Post</h1>
+  <form [formGroup]="postForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+      <label for="foodName" class="form-label">Food Name <span class="text-danger">*</span></label>
+      <input type="text" class="form-control" id="foodName" formControlName="foodName" placeholder="Enter food name">
+      <!-- Display validation errors if foodName is invalid -->
+      <div *ngIf="postForm.get('foodName')?.invalid && (postForm.get('foodName')?.dirty || postForm.get('foodName')?.touched)" class="text-danger">
+        <div *ngIf="postForm.get('foodName')?.errors?.['required']">Food Name is required.</div>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="foodCategory" class="form-label">Food Category <span class="text-danger">*</span></label>
+      <textarea class="form-control" id="foodCategory" formControlName="foodCategory" placeholder="Enter food category"></textarea>
+      <!-- Display validation errors if foodCategory is invalid -->
+      <div *ngIf="postForm.get('foodCategory')?.invalid && (postForm.get('foodCategory')?.dirty || postForm.get('foodCategory')?.touched)" class="text-danger">
+        <div *ngIf="postForm.get('foodCategory')?.errors?.['required']">Category is required.</div>
+      </div>
+    </div>
+    <!-- Image upload section -->
+    <div class="mb-3">
+      <label for="image" class="form-label">Upload Image</label>
+      <input type="file" class="form-control" id="image" multiple value="select" (change)="onFileSelected($event)" accept="image/*">
+      <!-- Display image preview -->
+      <div class="image-preview">
+        <div *ngFor="let fileHandle of postForm.get('imageModelSet')?.value">
+          <img [src]="fileHandle.url" class="img-thumbnail" alt="Image Preview">
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="postForm.invalid">Submit</button>
+  </form>
+</div>

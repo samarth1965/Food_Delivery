@@ -1,0 +1,122 @@
+body {
+    background-image: url('../../assets/pic6.jpg');
+    background-size: 100% 100%;
+    background-repeat:no-repeat;
+    font-family: Arial, sans-serif;
+    width: 100%; /* Adjust to cover the entire width of the viewport */
+    height: 100vh; /* Ensure the container covers the full viewport height */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the body stretches to at least the height of the viewport */
+}
+
+.container {
+    
+    
+    width: 100%; /* Adjust to cover the entire width of the viewport */
+    height: 100vh; /* Ensure the container covers the full viewport height */
+    width: 80%;
+    margin-bottom: 40px;
+    margin: auto;
+    overflow: auto;
+}
+
+.card-container {
+    margin-top: 50px;
+    margin-bottom: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* Align cards from left to right */
+    gap: 20px; /* Spacing between cards */
+}
+
+.food-card {
+    width: calc(33.33% - 20px); /* Adjust width to fit three cards per row with 20px gap */
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    overflow: hidden; /* Ensure content within the card does not overflow */
+}
+
+.food-card img {
+    width: 100%;
+    height: 200px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    object-fit: cover;
+}
+
+.food-card:hover {
+    transform: translateY(-5px);
+}
+
+.food-card .card-body {
+    padding: 15px;
+}
+
+.food-card h2 {
+    margin-top: 0;
+    font-size: 1.5rem;
+}
+
+.food-card p {
+    font-size: 1rem;
+    color: #666;
+}
+
+footer {
+    padding: 20px;
+    margin-top: auto; /* Push the footer to the bottom */
+    color: #fff;
+    background-color: #333;
+    text-align: center;
+}
+/* Add this to your existing home.css */
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.update-button, .delete-button {
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.update-button {
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+
+.update-button:hover {
+    background-color: #45a049;
+}
+
+.delete-button {
+    background-color: #f44336; /* Red */
+    color: white;
+}
+
+.delete-button:hover {
+    background-color: #da190b;
+}
+.container::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+}
+
+.container::-webkit-scrollbar-thumb {
+    background-color: #888; /* Color of the scrollbar thumb */
+    border-radius: 4px; /* Rounded corners of the scrollbar thumb */
+}
+
+.container::-webkit-scrollbar-track {
+    background-color: #eee; /* Color of the scrollbar track */
+    border-radius: 4px; /* Rounded corners of the scrollbar track */
+}

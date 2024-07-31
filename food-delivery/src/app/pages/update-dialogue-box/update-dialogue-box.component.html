@@ -1,0 +1,16 @@
+<h2 mat-dialog-title>Update Food</h2>
+<div mat-dialog-content>
+  <form (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <input matInput placeholder="Food Name" [(ngModel)]="foodName" name="foodName" required>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Food Category" [(ngModel)]="foodCategory" name="foodCategory" required>
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-button color="primary" (click)="onSubmit()">Update</button>
+</div>
+

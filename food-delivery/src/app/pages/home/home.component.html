@@ -1,0 +1,22 @@
+
+<body>
+<div class="container">
+    <div class="card-container">
+        <div *ngFor="let food of foods" class="food-card">
+            <div class="card">
+                <!-- <img [src]="food.imageUrl" alt="{{ food.foodName }}"> -->
+                <img [src]="'data:image/png;base64,' + food.imageModelSet[0].picture" class="card-img-top" alt="Post Image">
+                <div class="card-body">
+                    <h2>{{ food.foodName }}</h2>
+                    <p>{{ food.foodCategory }}</p>
+                    <div class="button-container">
+                        <button (click)="updateFood(food)" class="update-button">Update</button>
+                        <button (click)="deleteFood(food)" class="delete-button">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<router-outlet></router-outlet>
